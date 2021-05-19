@@ -1,16 +1,17 @@
 x=linspace(0,3,40); %se genera una serie de 40 elementos
 y=x*4/3; %se calcula los valores de las funcion
 x1=linspace(3,4,40); %se crea una serie de 40 elementos
-y1=-4*x1+16; %se calcula los valores de la otra funci髇
-plot(x,y,'b'); %se grafica la funci髇
+y1=-4*x1+16; %se calcula los valores de la otra funci贸n
+plot(x,y,'b'); %se grafica la funci贸n
 hold on;
-plot(x1,y1,'r') %e grafica la funci髇
+plot(x1,y1,'r') %e grafica la funci贸n
 y2=mapminmax(y,0,1); %se hace el reescalado
 y3=mapminmax(y1,0,1);% se hace el reescalado
-plot(x,y2,'b') %se grafica la funci髇 reescalada
+plot(x,y2,'b') %se grafica la funci贸n reescalada
 plot(x1,y3,'r')
 xlabel('X');
 ylabel('Y');
+%C谩lculo de Centro de gravedad
 b1=x(size(x))-x(1);%se calcula la base del primer triangulo
 h1=y((size(y)))-y(1);%se calcul la altura del primer triangulo
 if(h1(2)<0)% si la altura es negativa se cambia el signo
