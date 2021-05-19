@@ -1,4 +1,4 @@
-X = eye(10)
+X = eye(10); %Matriz identidad
 for i = 1:10
     for j = 1:10
         if i ~= j
@@ -6,4 +6,4 @@ for i = 1:10
         end
     end
 end
-X
+X %Mostramos el resultado
