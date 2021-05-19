@@ -1,0 +1,9 @@
+NOTA: Para poder ejecutar todo este ejersicio, se carga la matriz de prueba con:
+
+%En ORIG cargamos la matriz de prueba
+ORIG=zeros(10);
+ORIG(2,7) = 1; ORIG(3,5) = 1; ORIG(3,6) = 1; ORIG(3,8) = 1; ORIG(4,4) = 1; 
+ORIG(4,9) = 1; ORIG(5,3) = 1; ORIG(5,10) = 1; ORIG(6,3) = 1; ORIG(6,10) = 1;
+ORIG(7,2) = 1; ORIG(7,10) = 1; ORIG(8,3) = 1; ORIG(9,4) = 1; ORIG(10,5) = 1;
+
+NOTA 2: Cada una de las funciones que figura en la carpeta Ejersicio8 se detalla su funcionamiento en el PDF correspondiendo al GRUPO_IA
