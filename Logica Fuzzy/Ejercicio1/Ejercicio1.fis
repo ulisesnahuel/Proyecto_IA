@@ -1,0 +1,51 @@
+[System]
+Name='Ejercicio1'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='V1'
+Range=[-10 10]
+NumMFs=4
+MF1='':'trimf',[-6 1 5]
+MF2='Triangulo':'trimf',[-58.05 -50.05 -42.05]
+MF3='Hombro':'trapmf',[-10 -10 -8 -3]
+MF4='Hombro':'trapmf',[2.5 7 10 10]
+
+[Input2]
+Name='V2'
+Range=[-20 20]
+NumMFs=5
+MF1='Triangulo':'trimf',[-6 0.17 6]
+MF2='Trapecio':'trapmf',[3 4.92 9.78835978835978 13]
+MF3='Triangulo_rec._der.':'trimf',[10 20 20]
+MF4='Triangulo_rec._izq.':'trimf',[-20 -20 -10]
+MF5='Trapecio':'trapmf',[-13 -11 -6 -3]
+
+[Input3]
+Name='V3'
+Range=[0 10]
+NumMFs=5
+MF1='Campana_generalizada':'gbellmf',[0.7 2.5 5.05291005291005]
+MF2='mf2':'gaussmf',[0.45 3]
+MF3='mf3':'gaussmf',[0.45 7]
+MF4='hombro':'zmf',[1 2.5]
+MF5='hombro':'smf',[7.5 9]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.4 0 0.4]
+MF2='mf2':'trimf',[0.1 0.5 0.9]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Rules]
