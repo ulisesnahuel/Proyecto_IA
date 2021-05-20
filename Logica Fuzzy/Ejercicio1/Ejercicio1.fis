@@ -37,8 +37,8 @@ NumMFs=5
 MF1='Campana_generalizada':'gbellmf',[0.7 2.5 5.05291005291005]
 MF2='mf2':'gaussmf',[0.45 3]
 MF3='mf3':'gaussmf',[0.45 7]
-MF4='hombro':'zmf',[1 2.5]
-MF5='hombro':'smf',[7.5 9]
+MF4='Z shape':'zmf',[1 2.5]
+MF5='S shape':'smf',[7.5 9]
 
 [Output1]
 Name='output1'
