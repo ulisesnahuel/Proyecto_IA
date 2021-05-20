@@ -1,0 +1,39 @@
+[System]
+Name='tp3_2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='x'
+Range=[0 10]
+NumMFs=2
+MF1='low':'trapmf',[0 0 3 8]
+MF2='high':'trapmf',[4 6 10 10]
+
+[Input2]
+Name='y'
+Range=[0 10]
+NumMFs=2
+MF1='high':'trapmf',[4 6 10 10]
+MF2='low':'trapmf',[0 0 3 8]
+
+[Output1]
+Name='z'
+Range=[0 10]
+NumMFs=2
+MF1='low':'trapmf',[0 0 3 8]
+MF2='high':'trapmf',[4 6 10 10]
+
+[Rules]
+1 2, 2 (1) : 1
+1 1, 1 (1) : 1
+2 2, 1 (1) : 1
+2 1, 2 (1) : 1

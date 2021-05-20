@@ -1,0 +1,69 @@
+[System]
+Name='sistema_climatizador'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Tºafter'
+Range=[-40 40]
+NumMFs=5
+MF1='baja':'trapmf',[-40 -40 -30 -15]
+MF2='media':'trimf',[-15 0 15]
+MF3='alta':'trapmf',[15 30 40 40]
+MF4='mediabaja':'trimf',[-30 -15 0]
+MF5='mediaalta':'trimf',[0 15 30]
+
+[Input2]
+Name='Tºactual'
+Range=[-40 40]
+NumMFs=5
+MF1='mediabaja':'trimf',[-30 -15 -0]
+MF2='mediaalta':'trimf',[0 15 30]
+MF3='media':'trimf',[-15 0 15]
+MF4='baja':'trapmf',[-40 -40 -30 -15]
+MF5='alta':'trapmf',[15 30 40 40]
+
+[Output1]
+Name='output1'
+Range=[-100 100]
+NumMFs=5
+MF1='F':'trimf',[-60 -30 0]
+MF2='OFF':'trimf',[-30 0 30]
+MF3='C':'trimf',[0 30 60]
+MF4='MF':'trapmf',[-100 -100 -60 -30]
+MF5='MC':'trapmf',[30 60 100 100]
+
+[Rules]
+1 4, 5 (1) : 1
+1 1, 5 (1) : 1
+1 3, 3 (1) : 1
+1 2, 4 (1) : 1
+1 5, 4 (1) : 1
+4 4, 5 (1) : 1
+4 1, 5 (1) : 1
+4 3, 3 (1) : 1
+4 2, 4 (1) : 1
+4 5, 4 (1) : 1
+2 4, 5 (1) : 1
+2 1, 3 (1) : 1
+2 3, 2 (1) : 1
+2 2, 1 (1) : 1
+2 5, 4 (1) : 1
+5 4, 5 (1) : 1
+5 1, 3 (1) : 1
+5 3, 1 (1) : 1
+5 2, 1 (1) : 1
+5 5, 4 (1) : 1
+3 4, 5 (1) : 1
+3 1, 3 (1) : 1
+3 3, 1 (1) : 1
+3 2, 1 (1) : 1
+3 5, 4 (1) : 1
