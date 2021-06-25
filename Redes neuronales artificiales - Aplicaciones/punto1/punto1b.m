@@ -25,7 +25,7 @@ while (DW1~=0) && (DW2~=0) && (DW3~=0) && n<100000
 n = n+1;
 for i = 1:8
     for j = 1:7
-        y= heaviside(entrada(i,:)*w(:,j)+bias(j,1)); %heaviside -> función escalón
+        y= hardlim(entrada(i,:)*w(:,j)+bias(j,1)); %heaviside -> función escalón
         err_salida(j) = (salida(i,j)-y);
         Dw1(j) = etha*entrada(i,1)*err_salida(j); %actualización de peso w1
         Dw2(j) = etha*entrada(i,2)*err_salida(j) ;%actualización de peso w2
@@ -43,3 +43,5 @@ end
 sprintf(' Pesos:')
 w
 sprintf(' Bias:')
+bias
+sprintf(' Iteraciones = %g ',n)
