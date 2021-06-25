@@ -1,0 +1,44 @@
+clc
+entrada=[0 0 0; 
+0 0 1 ;
+0 1 0 ;
+0 1 1 ;
+1 0 0 ;
+1 0 1 ;
+1 1 0 ;
+1 1 1];
+salida=[1 1 1 1 1 1 0;
+0 1 1 0 0 0 0;
+1 1 0 1 1 0 1;
+1 1 1 1 0 0 1;
+0 1 1 0 0 1 1;
+1 0 1 1 0 1 1;
+1 0 1 1 1 1 1;
+1 1 1 0 0 0 0];
+entrada=entrada'
+etha = 0.4; %factor de aprendizaje
+bias=-1 + 2*rand(8,1);
+w= -1 + 2*rand(8,3);
+n=0;
+while n<10000
+%esta secuencia se ejecuta hasta que la variación de pesos sea nula
+n = n+1;
+    for j = 1:7
+        y= heaviside(w*entrada(:,j)+bias); %heaviside -> función escalón
+        err_salida(:,i) = (salida(:,j)-y);
+        w=w+err_salida( 
+    end
+    DW1 = sum(Dw1); 
+    DW2 = sum(Dw2);
+    DW3 = sum(Dw3);
+    w(1,:) = w(1,:) + DW1;
+    w(2,:) =w(2,:) + DW2;
+    w(3,:) =w(3,:) + DW3;
+    bias=bias+DW1;
+
+end
+sprintf(' Pesos:')
+w
+sprintf(' Bias:')
+bias
+sprintf(' Iteraciones = %g ',n)
