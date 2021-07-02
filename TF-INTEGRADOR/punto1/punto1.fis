@@ -1,0 +1,47 @@
+[System]
+Name='punto1'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='entrada1'
+Range=[0 7]
+NumMFs=3
+MF1='pocos':'trimf',[-3.5 0 3.5]
+MF2='moderado':'trimf',[0 3.5 7]
+MF3='muchos':'trimf',[3.5 7 10.5]
+
+[Input2]
+Name='entrada2'
+Range=[50 300]
+NumMFs=3
+MF1='bajo':'trimf',[-25 50 175]
+MF2='medio':'trimf',[50 175 300]
+MF3='alto':'trimf',[175 300 425]
+
+[Output1]
+Name='salida'
+Range=[0 1]
+NumMFs=3
+MF1='cerrado':'trimf',[-0.5 0 0.5]
+MF2='medio':'trimf',[0 0.5 1]
+MF3='abierta':'trimf',[0.5 1 1.5]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 2 (1) : 1
+3 2, 3 (1) : 1
+3 3, 3 (1) : 1
